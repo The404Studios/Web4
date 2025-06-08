@@ -1,14 +1,7 @@
 Web4: The Decentralized Internet Revolution
-<div align="center">
-ascii██╗    ██╗███████╗██████╗ ██╗  ██╗
-██║    ██║██╔════╝██╔══██╗██║  ██║
-██║ █╗ ██║█████╗  ██████╔╝███████║
-██║███╗██║██╔══╝  ██╔══██╗╚════██║
-╚███╔███╔╝███████╗██████╔╝     ██║
- ╚══╝╚══╝ ╚══════╝╚═════╝      ╚═╝
-🚀 The Future of Decentralized Networking is Here 🚀
+The Future of Decentralized Networking is Here 
 Built by the404studios - Architects of the Decentralized Web
-</div>
+
 
 What is Web4?
 Web4 isn't just another networking protocol—it's a paradigm shift. While Web1 gave us static pages, Web2 brought interactivity, and Web3 introduced blockchain, Web4 delivers true decentralization through intelligent mesh networking with cryptographically-secured smart contracts.
