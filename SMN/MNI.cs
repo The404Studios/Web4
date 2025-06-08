@@ -409,12 +409,12 @@ public class MeshNode : IDisposable
             _backgroundTasks.Add(Task.Run(ContractExpirationMonitor, _shutdownCts.Token));
             _backgroundTasks.Add(Task.Run(StatePersistenceLoop, _shutdownCts.Token));
 
-            Console.WriteLine($"✅ MeshNode {_nodeId} started successfully");
+            Console.WriteLine($"MeshNode {_nodeId} started successfully");
             return true;
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"❌ Failed to start MeshNode {_nodeId}: {ex.Message}");
+            Console.WriteLine($"Failed to start MeshNode {_nodeId}: {ex.Message}");
             return false;
         }
     }
@@ -442,7 +442,7 @@ public class MeshNode : IDisposable
         _persistenceManager?.Dispose();
         _metricsTimer?.Dispose();
 
-        Console.WriteLine($"✅ MeshNode {_nodeId} stopped");
+        Console.WriteLine($"MeshNode {_nodeId} stopped");
     }
 
     /// <summary>
@@ -469,12 +469,12 @@ public class MeshNode : IDisposable
             // Set up peer-specific resources
             await SetupPeerResourcesAsync(modifiedContract);
 
-            Console.WriteLine($"✅ Contract accepted for {modifiedContract.DeviceId} - {reason}");
+            Console.WriteLine($"Contract accepted for {modifiedContract.DeviceId} - {reason}");
             return true;
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"❌ Failed to accept contract for {proposedContract.DeviceId}: {ex.Message}");
+            Console.WriteLine($"Failed to accept contract for {proposedContract.DeviceId}: {ex.Message}");
             return false;
         }
     }
@@ -650,12 +650,12 @@ public class MeshNode : IDisposable
 
     private void OnPeerConnected(string peerId)
     {
-        Console.WriteLine($"🔗 Peer connected: {peerId}");
+        Console.WriteLine($"Peer connected: {peerId}");
     }
 
     private void OnPeerDisconnected(string peerId)
     {
-        Console.WriteLine($"🔌 Peer disconnected: {peerId}");
+        Console.WriteLine($"Peer disconnected: {peerId}");
         
         // Clean up peer resources
         _peerLimiters.TryRemove(peerId, out _);
@@ -759,8 +759,8 @@ public class MeshNodeExample
         var meshNode = new MeshNode("example-node-001", config);
 
         // Set up event handlers
-        meshNode.OnPacketDropped += reason => Console.WriteLine($"📉 Packet dropped: {reason}");
-        meshNode.OnRateLimited += delay => Console.WriteLine($"⏳ Rate limited: {delay.TotalMilliseconds:F0}ms delay");
+        meshNode.OnPacketDropped += reason => Console.WriteLine($"Packet dropped: {reason}");
+        meshNode.OnRateLimited += delay => Console.WriteLine($"Rate limited: {delay.TotalMilliseconds:F0}ms delay");
 
         try
         {
